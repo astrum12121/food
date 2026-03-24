@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Foodie – Доставка еды</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container header__container">
+            <a href="#home" class="logo">🍔 Foodie</a>
+            <nav class="nav">
+                <ul class="nav__list">
+                    <li><a href="#home" class="nav__link active">Главная</a></li>
+                    <li><a href="#menu" class="nav__link">Меню</a></li>
+                    <li><a href="#promo" class="nav__link">Акции</a></li>
+                    <li><a href="#contacts" class="nav__link">Контакты</a></li>
+                </ul>
+            </nav>
+            <div class="cart-icon" id="cartIcon">
+                <i class="fas fa-shopping-cart"></i>
+                <span class="cart-count" id="cartCount">0</span>
+            </div>
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <div class="mobile-menu" id="mobileMenu">
+        <ul class="mobile-menu__list">
+            <li><a href="#home" class="mobile-menu__link">Главная</a></li>
+            <li><a href="#menu" class="mobile-menu__link">Меню</a></li>
+            <li><a href="#promo" class="mobile-menu__link">Акции</a></li>
+            <li><a href="#contacts" class="mobile-menu__link">Контакты</a></li>
+        </ul>
+    </div>
+
+    <main>
+        <!-- Главная (hero) -->
+        <section id="home" class="hero">
+            <div class="container hero__container">
+                <div class="hero__content">
+                    <h1 class="hero__title">Вкусная еда <br>с быстрой доставкой</h1>
+                    <p class="hero__subtitle">Выберите любимые блюда из нашего меню и получите их за 30 минут</p>
+                    <a href="#menu" class="btn btn--primary">Посмотреть меню</a>
+                </div>
+                <div class="hero__image">
+                    <img src="images/hero-food.jpg" alt="Блюда">
+                </div>
+            </div>
+        </section>
+
+        <!-- Меню и фильтры -->
+        <section id="menu" class="categories">
+            <div class="container">
+                <h2 class="section-title">Наше меню</h2>
+                <div class="categories__filter" id="categoryFilter">
+                    <button class="category-btn active" data-category="all">Все</button>
+                    <button class="category-btn" data-category="pizza">Пицца</button>
+                    <button class="category-btn" data-category="burger">Бургеры</button>
+                    <button class="category-btn" data-category="zakus">Закуски</button>
+                    <button class="category-btn" data-category="drink">Напитки</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Каталог товаров -->
+        <section class="products">
+            <div class="container">
+                <div class="products__grid" id="productsGrid"></div>
+            </div>
+        </section>
+
+        <!-- Акции -->
+<section id="promo" class="promo">
+    <div class="container">
+        <h2 class="section-title">Наши акции</h2>
+        <div class="promo__grid">
+            <!-- Акция 1: Пицца дня -->
+            <div class="promo__card">
+                <div class="promo__badge">−20%</div>
+                <img src="images/pizza-day.jpg" alt="Пицца дня" class="promo__image">
+                <h3 class="promo__title">Пицца дня</h3>
+                <p class="promo__desc">Каждый день новая пицца со скидкой 20%</p>
+                <button class="btn btn--primary promo__btn" 
+                        data-id="promo_pizza_day" 
+                        data-name="Пицца дня (акция)" 
+                        data-price="360">Купить</button>
+            </div>
+            <!-- Акция 2: Счастливые часы (2=3) -->
+            <div class="promo__card">
+                <div class="promo__badge">2=3</div>
+                <img src="images/drinks-promo.jpg" alt="Напитки" class="promo__image">
+                <h3 class="promo__title">Счастливые часы</h3>
+                <p class="promo__desc">При покупке двух напитков третий в подарок</p>
+                <!-- Кнопка с классом promo__btn--drink, открывает модальное окно -->
+                <button class="btn btn--primary promo__btn promo__btn--drink">Выбрать</button>
+            </div>
+            <!-- Акция 3: Комбо-обед -->
+            <div class="promo__card">
+                <div class="promo__badge">−15%</div>
+                <img src="images/combo-promo.jpg" alt="Комбо" class="promo__image">
+                <h3 class="promo__title">Комбо-обед</h3>
+                <p class="promo__desc">Скидка 15% на комбо из бургера, картошки и напитка</p>
+                <button class="btn btn--primary promo__btn" 
+                        data-id="promo_combo" 
+                        data-name="Комбо-обед (акция)" 
+                        data-price="600">Купить</button>
+            </div>
+        </div>
+    </div>
+</section>
+
+        <!-- Контакты -->
+        <section id="contacts" class="contacts">
+            <div class="container">
+                <h2 class="section-title">Контакты</h2>
+                <div class="contacts__wrapper">
+                    <div class="contacts__info">
+                        <h3>Мы на связи</h3>
+                        <p><i class="fas fa-map-marker-alt"></i> ул. Пушкина, д. 10, Москва</p>
+                        <p><i class="fas fa-phone-alt"></i> <a href="tel:+74951234567">+7 (495) 123-45-67</a></p>
+                        <p><i class="fas fa-envelope"></i> <a href="mailto:info@foodie.ru">info@foodie.ru</a></p>
+                        <div class="contacts__social">
+                            <a href="#" aria-label="Telegram"><i class="fab fa-telegram"></i></a>
+                            <a href="#" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+                    <form class="contacts__form" id="contactForm">
+                        <h3>Напишите нам</h3>
+                        <input type="text" placeholder="Ваше имя" required>
+                        <input type="email" placeholder="Email" required>
+                        <textarea rows="4" placeholder="Сообщение" required></textarea>
+                        <button type="submit" class="btn btn--primary">Отправить</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Корзина -->
+    <div class="cart-modal" id="cartModal">
+        <div class="cart-modal__overlay" id="cartOverlay"></div>
+        <div class="cart-modal__content">
+            <div class="cart-modal__header">
+                <h3>Ваша корзина</h3>
+                <button class="cart-modal__close" id="closeCartBtn">&times;</button>
+            </div>
+            <div class="cart-modal__body" id="cartItems"></div>
+            <div class="cart-modal__footer">
+                <div class="cart-total">
+                    <span>Итого:</span>
+                    <span id="cartTotalPrice">0 ₽</span>
+                </div>
+                <button class="btn btn--primary" id="checkoutBtn">Оформить заказ</button>
+                <button class="btn btn--secondary" id="clearCartBtn">Очистить корзину</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Оформление заказа -->
+    <div class="checkout-modal" id="checkoutModal">
+        <div class="checkout-modal__overlay" id="checkoutOverlay"></div>
+        <div class="checkout-modal__content">
+            <h3>Оформление заказа</h3>
+            <form id="checkoutForm">
+                <input type="text" placeholder="Ваше имя" required>
+                <input type="tel" placeholder="Телефон" required pattern="\+?[0-9\s\-\(\)]+">
+                <input type="text" placeholder="Адрес доставки" required>
+                <button type="submit" class="btn btn--primary">Подтвердить заказ</button>
+                <button type="button" class="btn btn--secondary" id="closeCheckoutBtn">Отмена</button>
+            </form>
+        </div>
+    </div>
+    <!-- Модальное окно выбора напитка для акции 2=3 -->
+    <div class="drink-modal" id="drinkModal">
+    <div class="drink-modal__overlay" id="drinkOverlay"></div>
+    <div class="drink-modal__content">
+        <h3>Выберите напиток</h3>
+        <form id="drinkForm">
+            <div class="drink-options">
+                <label class="drink-option">
+                    <input type="radio" name="drink" value="Кола" checked> Кола
+                </label>
+                <label class="drink-option">
+                    <input type="radio" name="drink" value="Сок апельсиновый"> Сок апельсиновый
+                </label>
+                <label class="drink-option">
+                    <input type="radio" name="drink" value="Лимонад"> Лимонад
+                </label>
+                <label class="drink-option">
+                    <input type="radio" name="drink" value="Минеральная вода"> Минеральная вода
+                </label>
+            </div>
+            <div class="drink-modal__buttons">
+                <button type="submit" class="btn btn--primary">Добавить в корзину</button>
+                <button type="button" class="btn btn--secondary" id="closeDrinkBtn">Отмена</button>
+            </div>
+        </form>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="container footer__container">
+            <p>&copy; 2026 Foodie. Все права защищены.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
